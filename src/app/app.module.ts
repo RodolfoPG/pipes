@@ -1,5 +1,6 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'
 import localePt from '@angular/common/locales/pt'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { CamelCasePipe } from './camel-case.pipe';
 import { SettingsService } from './settings.service';
 
 import { registerLocaleData } from '@angular/common';
+import { FiltroArrayPipe } from './filtro-array.pipe';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -16,11 +18,13 @@ registerLocaleData(localePt, 'pt-BR');
   declarations: [
     AppComponent,
     ExemplosPipesComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    FiltroArrayPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     // {
