@@ -25,4 +25,18 @@ export class ExemplosPipesComponent {
     console.log(this.livros)
   }
 
+  obterCursos() {
+
+    if (this.livros.length === 0 || this.filtro === undefined || this.filtro.trim() === '') {
+      return this.livros
+    }
+
+    return this.livros.filter(
+      (v:string) => {
+        if (v.toLocaleString().toLowerCase().indexOf(this.filtro.toLowerCase()) >= 0) {
+        return true
+      }
+      return false
+    })
+  }
 }
